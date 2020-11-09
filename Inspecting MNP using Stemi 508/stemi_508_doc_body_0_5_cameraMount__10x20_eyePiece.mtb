@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MTB2004Export Version="2.12.0.7">
+  <MTBConfiguration Name="test_config" MyChildId="0">
+    <Devices>
+      <Device Class="MTBCtrlDevice,MTBKernel" Name="Stemi508.Stand" DisplayName="Stemi 508 doc/trino" External="false" PortType="USB" PortNo="4111" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="00" MyChildId="1">
+        <SimulationMode>false</SimulationMode>
+        <Components>
+          <Component Class="MTBCtrlObject,MTBKernel" Name="Object" MTBId="MTBObject" CANId="00" />
+        </Components>
+        <Slave ChildId="11720" OwnPropDevice="true">Gateway_Stemi508.EMS3</Slave>
+      </Device>
+      <Device Class="MTBCtrlElectronicModuleDeviceREO,MTBKernelREO" Name="Gateway_Stemi508.EMS3" DisplayName="EMS3/SyCoP3" External="false" PortType="USB" PortNo="4111" PortBaudAddr="" RTSCTS="false" CANConnection="" CanNode="40" MyChildId="11720">
+        <SimulationMode>true</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceREOElectronicModule</SimulationClass>
+        <TechReport>ReportWegaEMS3</TechReport>
+        <WriteConfig>WriteConfigWega</WriteConfig>
+        <LightPath>SteREO</LightPath>
+        <Components>
+          <Component Class="MTBCtrlZoomChangerREO,MTBKernelREO" Name="Stemi305.Zoom_man" DisplayName="Manual Zoom" DisplayName-de="Manuelles Zoom" MTBId="MTBOptovarChanger" CANId="08">
+            <NumberOfPositions>10</NumberOfPositions>
+            <Motorization>0</Motorization>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <ChangerElements>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_0_63" Position="0">
+                <Magnification>0.63</Magnification>
+              </Element>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_0_8" Position="1">
+                <Magnification>0.8</Magnification>
+              </Element>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_1_0" Position="2">
+                <Magnification>1</Magnification>
+              </Element>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_1_25" Position="3">
+                <Magnification>1.25</Magnification>
+              </Element>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_1_6" Position="4">
+                <Magnification>1.6</Magnification>
+              </Element>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_2_0" Position="5">
+                <Magnification>2.0</Magnification>
+              </Element>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_2_5" Position="6">
+                <Magnification>2.5</Magnification>
+              </Element>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_3_2" Position="7">
+                <Magnification>3.2</Magnification>
+              </Element>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_4_0" Position="8">
+                <Magnification>4.0</Magnification>
+              </Element>
+              <Element Class="MTBCtrlOptovar,MTBKernel" Name="REO.Zoom_man_5_0" Position="9">
+                <Magnification>5.0</Magnification>
+              </Element>
+            </ChangerElements>
+          </Component>
+          <Component Active="false" Name="REO.Focus_man" MTBId="MTBNone" CANId="08" MyChildId="11721" />
+          <Component Active="false" Name="REO.none" MTBId="MTBReoRLLamp" CANId="00" MyChildId="11503" />
+          <Component Active="false" Name="REO.none" MTBId="MTBReoRLLamp" CANId="00" MyChildId="11504" />
+          <Component Active="false" Name="REO.none" MTBId="MTBReoRLLamp" CANId="00" MyChildId="11505" />
+          <Component Class="MTBCtrlObjectiveChangerCan29Stands,MTBKernelCan29Stands" Name="REO.NosepieceStemi_1xman" MTBId="MTBObjectiveChanger" CANId="00" MyChildId="11725">
+            <NumberOfPositions>1</NumberOfPositions>
+            <Motorization>0</Motorization>
+            <CmdSetTimeout>2000</CmdSetTimeout>
+            <ChangerElements>
+              <Element Class="MTBCtrlObjective,MTBKernel" Name="REOObjective.none" MyChildId="11100" Position="0">
+                <Magnification>1</Magnification>
+                <Aperture>-1</Aperture>
+                <Immersion />
+                <Contrast>BrightField,DarkField,</Contrast>
+                <Features>Stereo</Features>
+                <WorkingDistance />
+                <OrderNo />
+              </Element>
+            </ChangerElements>
+          </Component>
+          <Component Active="false" Name="REO.StemiFotoTube_man" MTBId="MTBTube" CANId="00" MyChildId="11726">
+            <Slave ChildId="0">Stemi.VisCamChanger_man</Slave>
+            <Slave ChildId="11160">REO.Eyepiece_10x_20</Slave>
+            <Slave ChildId="11161">CameraAdapter.0.5x</Slave>
+          </Component>
+          <Component Class="MTBCtrlChanger,MTBKernel" Name="Stemi.VisCamChanger_man" MTBId="MTBTubeVisCamChanger" CANId="00" MyChildId="0">
+            <NumberOfPositions>2</NumberOfPositions>
+            <Motorization>0</Motorization>
+            <SimulationClass>ZEISS.MTB.Simulation.MTBSimPhxChanger</SimulationClass>
+            <Simulation>
+              <TypMovementTime>0.5</TypMovementTime>
+            </Simulation>
+            <ChangerElements>
+              <Element Class="MTBCtrlBeamSplitter,MTBKernel" Name="FotoTube.VIS_Cam_100/0" Position="0">
+                <Successor1>MTBEyePiece</Successor1>
+                <Successor2>MTBCameraPort</Successor2>
+                <SplittingRatioSuccessor1>1</SplittingRatioSuccessor1>
+              </Element>
+              <Element Class="MTBCtrlBeamSplitter,MTBKernel" Name="FotoTube.VIS_Cam_0/100" Position="1">
+                <Successor1>MTBEyePiece</Successor1>
+                <Successor2>MTBCameraPort</Successor2>
+                <SplittingRatioSuccessor1>0</SplittingRatioSuccessor1>
+              </Element>
+            </ChangerElements>
+          </Component>
+          <Component Class="MTBCtrlEyepieceREO,MTBKernelREO" Name="REO.Eyepiece_10x_20" MTBId="MTBEyePiece" CANId="00" MyChildId="11160">
+            <Magnification>10</Magnification>
+            <FieldOfView>20</FieldOfView>
+          </Component>
+          <Component Class="MTBCtrlCameraAdapter,MTBKernel" Name="CameraAdapter.0.5x" MTBId="MTBCameraAdapter_MTBTube_Cameraport" CANId="00" MyChildId="11161">
+            <Magnification>0.5</Magnification>
+            <LightPathLocation>MTBTube,Cameraport</LightPathLocation>
+            <Slave ChildId="-1">AxioCamEL</Slave>
+          </Component>
+          <Component Class="MTBCtrlCameraInfo,MTBKernel" Name="AxioCamEL" DisplayName="Axiocam 105" MTBId="MTBCamera_MTBCameraAdapter_MTBTube_Cameraport" CANId="00" MyChildId="-1">
+            <CameraId>AxioCamEL</CameraId>
+            <DisplayName>Axiocam 105</DisplayName>
+            <Trigger>none</Trigger>
+          </Component>
+        </Components>
+        <Slave ChildId="0">Wega.Main</Slave>
+      </Device>
+      <Device Class="MTBCtrlDeviceSycop3,MTBKernelWEGA" Name="Wega.Main" External="false" PortType="USB" PortNo="4111" PortBaudAddr="" RTSCTS="false" CanNode="25" MyChildId="0">
+        <SimulationMode>true</SimulationMode>
+        <SimulationClass>ZEISS.MTB.Simulation.MTBSimDeviceWegaMain</SimulationClass>
+        <TechReport>ReportWegaMain</TechReport>
+        <Components>
+          <Component Class="MTBCtrlMicroscopeManagerSycop3,MTBKernelREO" Name="REO.MicroscopeManager" MTBId="MTBMicroscopeManager" CANId="00" MyChildId="11024">
+            <LightManagerModes>Off, REOReflectedLight, REOTransmittedLight</LightManagerModes>
+          </Component>
+        </Components>
+      </Device>
+    </Devices>
+  </MTBConfiguration>
+</MTB2004Export>
